@@ -1,5 +1,5 @@
 <?php
-include 'database';
+include 'database.php';
 
 //masuk kan data input method GET/POST form edit kedalam variabel
 $data1 = $_GET['data1'];
