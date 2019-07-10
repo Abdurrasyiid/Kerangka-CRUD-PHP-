@@ -11,6 +11,12 @@ $query = "INSERT INTO data  (data1,data2,data3) VALUES ('$data1','$data2','$data
 //eksekusi query
 $sql = mysqli_query($koneksi, $query);
 
+if($sql){
+    Header('Location:index.php');
+} else{
+echo "gagal simpan";
+}
+
 ?>
 
 <!DOCTYPE html>
