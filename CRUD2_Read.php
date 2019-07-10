@@ -1,6 +1,6 @@
 <?php
 
-include 'database';
+include 'database.php';
 
 //query untuk menampilkan database
 $query = "SELECT * FROM data";
@@ -21,17 +21,36 @@ $data = mysqli_fetch_all($sql, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <h1>Menampilkan Data</h1>
+    <form action="search.php" method="get">
 
-    //fungsi foreach utk mengambil data array dr variabel $data 
-    <?php foreach ($data as $d) : ?>
+        <input type="text" name="cari" placeholder="cari" value="<?php echo $_GET['cari'] ?>">
+        <button type="submit">cari</button>
 
-        <h2><?php echo $d['data1'] ?></h2> //|menampilan
-        <h2><?php echo $d['data2'] ?></h2> //|data
-        <h2><?php echo $d['data3'] ?></h2> //|array
+    </form>
 
-        <?php echo endforeach; ?>
+    <table>
 
-    </body>
+        <tr>
+            <th>data1</th>
+            <th>data2</th>
+            <th>data3</th>
+        </tr>
+
+        <?php foreach ($data as $d) : ?>
+
+            <tr>
+                <td><?php echo $d['data1'] ?></td>
+                <td><?php echo $d['data2'] ?></td>
+                <td><?php echo $d['data3'] ?></td>
+                <td><a href="UpdateUI.php?data1=<?php echo $d['data1'] ?>">edit</a>
+                    || <a href="Delete.php?data1=<?php echo $d['data1'] ?>">Hapus</a>"></a></td>
+            </tr>
+
+        <?php endforeach; ?>
+
+
+
+    </table>
+</body>
 
     </html>
