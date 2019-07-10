@@ -7,7 +7,7 @@ $data2 = $_GET['data2'];
 $data3 = $_GET['data3'];
 
 //query SQL
-$query = "INSERT INTO data data (data1,data2,data3) VALUES ('$data1','$data2','$data3')";
+$query = "INSERT INTO data  (data1,data2,data3) VALUES ('$data1','$data2','$data3')";
 //eksekusi query
 $sql = mysqli_query($koneksi, $query);
 
