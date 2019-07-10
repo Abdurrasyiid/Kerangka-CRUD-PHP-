@@ -1,5 +1,5 @@
 <?php
-include 'database';
+include 'database.php';
 
 $data1 = $_POST['data1'];
 $data2 = $_POST['data2'];
