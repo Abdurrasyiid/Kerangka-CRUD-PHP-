@@ -25,7 +25,7 @@ $data = mysqli_fetch_all($sql, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <form action="updatedb.php" method="get">
+    <form action="updatedb.php" method="post">
         <input type="text" name="data1" value="<?php echo $data[0]['data1'] ?>">
         <input type="text" name="data2" value="<?php echo $data[0]['data2'] ?>">
         <input type="text" name="data3" v2lue="<?php echo $data[0]['data3'] ?>">
